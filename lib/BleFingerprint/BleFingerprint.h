@@ -86,7 +86,7 @@ private:
     bool shouldHide(const String& s);
 
     const BleFingerprintCollection *_parent{};
-    bool hasValue = false, close = false, reported = false, macPublic = false, ignore = false, allowQuery = false, didQuery = false, rmAsst = false, hidden = false, connectable = false;
+    bool hasValue = false, added = false, close = false, reported = false, macPublic = false, ignore = false, allowQuery = false, didQuery = false, rmAsst = false, hidden = false, connectable = false;
     NimBLEAddress address;
     String id, name, disc;
     short int idType = 0;

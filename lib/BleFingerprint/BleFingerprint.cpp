@@ -357,8 +357,6 @@ bool BleFingerprint::seen(BLEAdvertisedDevice *advertisedDevice)
     double ratio = double(get1mRssi() - rssi) / 35.0f;
     raw = float(pow(10, ratio));
 
-    bool hadValue = hasValue;
-
     if (filter())
     {
         hasValue = true;
@@ -375,7 +373,11 @@ bool BleFingerprint::seen(BLEAdvertisedDevice *advertisedDevice)
             close = false;
         }
 
-        if (!hadValue) return true;
+        if (!added)
+        {
+            added = true;
+            return true;
+        }
     }
 
     return false;
